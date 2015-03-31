@@ -1,10 +1,12 @@
 Autoform tags
 ============
 
+Forked from yogiben:autoform-tags, added support for autoform 5.
+
 Tags input for autoForm and bootstrap with [bootstrap-tagsinput](http://timschlechter.github.io/bootstrap-tagsinput/examples/). 
 
 ###Setup###
-1) Install `meteor add yogiben:autoform-tags`
+1) Install `meteor add ahmetcetin:autoform-tags`
 
 2) Define your schema and set the `autoform` property like in the example below
 ```
