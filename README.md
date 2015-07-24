@@ -1,32 +1,30 @@
 Autoform tags
 ============
 
-Forked from yogiben:autoform-tags, added support for autoform 5.
+Forked from yogiben:autoform-tags and ahmetcetin:autoform-tags, added support placeholder and updated bootstrap-tagsinput.
 
 Tags input for autoForm and bootstrap with [bootstrap-tagsinput](http://timschlechter.github.io/bootstrap-tagsinput/examples/). 
 
 ###Setup###
-1) Install `meteor add ahmetcetin:autoform-tags`
+1) Install `meteor add loftsteinn:autoform-tags`
 
 2) Define your schema and set the `autoform` property like in the example below
 ```
-Schemas = {}
-
-@Entries = new Meteor.Collection('entries');
-
-Schemas.Entries = new SimpleSchema
-	title:
-		type:String
-		max: 60
-		
-	tags:
-		type: [String] # or String
-		autoform:
-			type: 'tags'
-			afFieldInput:
-				# bootstrap-tagsinput options
-
-Entries.attachSchema(Schemas.Entries)
+Entries = new Mongo.Collection('entries');
+Profiles.attachSchema(new SimpleSchema({
+    title: {
+        type: String
+    },
+    tags: {
+        type: [String] # or String,
+        autoform: {
+            type: 'tags',
+            afFieldInput: {
+                # bootstrap-tagsinput options
+            }    
+        }
+    }
+});
 ```
 
 3) Generate the form with `{{> quickform}}` or `{{#autoform}}`
